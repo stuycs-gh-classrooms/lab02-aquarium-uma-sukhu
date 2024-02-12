@@ -2,8 +2,8 @@ class Starfish extends Animal {
   
   int numPoints;
   
-  Starfish(int px, int py) {
-    super(px, py);
+  Starfish(int px, int py, int size, Tank myTank) {
+    super(px, py, size, myTanks);
     body = color(234, 132, 36);
     numPoints = int(random(5, 8));
   }
