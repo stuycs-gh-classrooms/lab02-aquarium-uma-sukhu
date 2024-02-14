@@ -20,7 +20,7 @@ class Animal {
   Animal(int x,int y, int size, Tank myTank){
     this.size = size;
     position = new PVector(x,y);
-    velocity = new PVector();
+    velocity = new PVector(pow(-1, int(random(2))), pow(-1, int(random(2))));
     c = #FF0000;
     this.myTank = myTank;
     this.foodChainID =size;

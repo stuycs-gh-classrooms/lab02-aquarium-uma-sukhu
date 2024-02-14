@@ -24,5 +24,5 @@ void draw() {
 }
 
 void mouseClicked() {
-  t.populate(10);
+  t.addAnimal(mouseX, mouseY);
 }

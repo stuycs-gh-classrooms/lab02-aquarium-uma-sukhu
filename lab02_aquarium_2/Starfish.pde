@@ -16,7 +16,13 @@ class Starfish extends Animal {
        return false;
      }
    }
-   
+  
+  void display(){
+    if(isValidStarfish()) {
+    fill(c);
+    rect(position.x,position.y, 10, 3);
+    }
+  }
    void move() {
      super.move();
          velocity.y = 0;

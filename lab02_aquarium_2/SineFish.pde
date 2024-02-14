@@ -7,6 +7,8 @@ class SineFish extends Animal {
     super(x, y, myTank);
     angleSpeed = random(0.05, 0.2);
     refy = position.y;
+    sizeH = 3;
+    sizeL = 5;
   }
 
  void move() {

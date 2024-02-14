@@ -22,13 +22,13 @@ class Crab extends Animal {
       if (position.x + myTank.w >= width || position.x <= 0) {
         velocity.x *= -1;
       }
-      position.x += velocity.x; // Move horizontally
+      position.x += 0; // Move horizontally
     }
   }
 
   void display() {
-    fill(255, 0, 0); // Change color for the crab
+    fill(255, 0, 0); 
     stroke(0);
-    rect(position.x, position.y, myTank.w, myTank.h);
+    rect(position.x, position.y, 20, 20);
   }
 }
