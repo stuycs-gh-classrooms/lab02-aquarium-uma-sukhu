@@ -1,12 +1,10 @@
 class SineFish extends Animal {
   float theta = 0;
   float angleSpeed;
-  float refy;
   
   SineFish(int x, int y, Tank myTank) {
     super(x, y, myTank);
     angleSpeed = random(0.05, 0.2);
-    refy = position.y;
     sizeH = 3;
     sizeL = 5;
   }
@@ -14,7 +12,7 @@ class SineFish extends Animal {
  void move() {
     position.x += velocity.x;
     theta += angleSpeed;
-    position.y = (int)(refy + 50 * sin(theta)); 
+    position.y = (int)(position.y + 50 * sin(theta)); 
     if (position.x + sizeL >= width || position.x <= 0) {
       velocity.x *= -1;
     }

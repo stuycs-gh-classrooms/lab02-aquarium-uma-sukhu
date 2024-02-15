@@ -7,25 +7,32 @@ class Starfish extends Animal {
     c = color(234, 132, 36);
     numPoints = int(random(5, 8));
   }
-  
-    boolean isValidStarfish() {
-     if(position.y > tankY + (tankH - floorH)) {
-       return true;
-     }
-     else {
-       return false;
-     }
-   }
+
   
   void display(){
-    if(isValidStarfish()) {
     fill(c);
-    rect(position.x,position.y, 10, 3);
+    circle(position.x,position.y, size);
+    if(velocity.x > 0) {
+         beginShape();
+    vertex(position.x - (size/2), position.y);
+    vertex(position.x - size, position.y + size);
+    vertex(position.x - size, position.y - size);
+    endShape(CLOSE);
     }
-  }
+    else{
+    beginShape();
+    vertex(position.x + (size/2), position.y);
+    vertex(position.x + size, position.y + size);
+    vertex(position.x + size, position.y - size);
+    endShape(CLOSE);
+    }
+    }
+      
+
    void move() {
      super.move();
          velocity.y = 0;
+       
    }
    
   }

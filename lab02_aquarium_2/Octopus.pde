@@ -12,9 +12,9 @@ class Octopus extends Animal{
     this(x,y,10, myTank);
   }
   
-  Octopus(Tank myTank){
-    super(myTank);
-  }
+  //Octopus(Tank myTank){
+  //  super(myTank);
+  //}
   
   void display(){
     fill(#00FF00);
@@ -31,10 +31,5 @@ class Octopus extends Animal{
     foodChainID = other.foodChainID/2 + foodChainID;
   }
   
-  void changeV(){
-    int dx = (int)random(-4,4);
-    int dy = (int)random(-4,4);
-    changeV(dx,dy);
-  }
   
 }

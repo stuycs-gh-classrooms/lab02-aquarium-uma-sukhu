@@ -12,9 +12,9 @@ class Fish extends Animal{
     this(x,y,10, myTank);
   }
   
-  Fish(Tank myTank){
-    super(myTank);
-  }
+  //Fish(Tank myTank){
+  //  super(myTank);
+  //}
   
   void display(){
     fill(#FFFF00);
@@ -29,12 +29,6 @@ class Fish extends Animal{
   
   void updateFoodChain(Animal other){
     foodChainID = other.foodChainID*2 + foodChainID;
-  }
-  
-  void changeV(){
-    int dx = (int)random(-2,2);
-    int dy = (int)random(-2,2);
-    changeV(dx,dy);
   }
   
 }

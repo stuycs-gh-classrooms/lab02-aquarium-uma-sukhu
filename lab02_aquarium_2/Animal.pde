@@ -32,8 +32,8 @@ class Animal {
     this(x,y,20, myTank);
   }
   
-  Animal(Tank myTank){
-  }
+  //Animal(Tank myTank){
+  //}
   
   boolean inXBounds(PVector nextPos){
     return nextPos.x - size/2 <= myTank.topCorner().x ||

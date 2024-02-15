@@ -4,13 +4,7 @@ class Goldfish extends Animal {
     super(px, py, myTank);
     c = color(247, 114, 5);
     velocity.y += 3;
+    this.foodChainID = size/2;
   }
-  
-  void display() {
-    super.display();
-    fill(0);
-    circle(position.x + 10, position.y + sizeH/2, 2);
-  }
-  
   
 }
