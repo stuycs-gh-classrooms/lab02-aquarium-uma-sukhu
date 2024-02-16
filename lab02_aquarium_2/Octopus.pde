@@ -5,26 +5,16 @@ class Octopus extends Animal{
     super(x,y,size,myTank);
     img = loadImage("octopus.png");
     this.foodChainID = size*2;
-    this.MAXVELOCITY = 5;
+    c = #00FF00;
   }
   
   Octopus(int x,int y, Tank myTank){
     this(x,y,10, myTank);
   }
   
-  //Octopus(Tank myTank){
-  //  super(myTank);
-  //}
-  
   void display(){
-    fill(#00FF00);
-    circle(position.x,position.y, size);
-    image(img, position.x-size/2, position.y-size/2, size, size); //the image's corner will be at (0, 0) and the size of the image will be 25x50
-  }
-  
-  boolean inYBounds(PVector nextPos){
-    return nextPos.y - size/2  <= myTank.topCorner().y ||
-        nextPos.y + size/2  >= myTank.bottomCorner().y - myTank.floor_height;
+    super.display();
+    image(img, position.x-size/2, position.y-size/2, size, size); 
   }
   
   void updateFoodChain(Animal other){

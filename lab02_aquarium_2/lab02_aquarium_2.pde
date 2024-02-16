@@ -19,10 +19,29 @@ void draw() {
   background(150);
   t.moveAnimals();
   t.interactions();
- // t.clean();
+  t.clean();
   t.display();
 }
 
 void mouseClicked() {
-  t.addAnimal(mouseX, mouseY);
+  t.populate(10);
 }
+
+void keyPressed() {
+  if(key == '1') {
+    t.addAnimal(1);
+  }
+  if(key == '2'){
+    t.addAnimal(2);
+  }
+  if(key == '3'){
+    t.addAnimal(3);
+  }
+  if(key == '4'){
+    t.addAnimal(4);
+  }
+  if(key == '0'){
+    t.addAnimal(0);
+  }
+}
+    

@@ -1,9 +1,9 @@
-//import java.util.*;
-//import java.util.Iterator;
+import java.util.*;
+import java.util.Iterator;
 class Tank {
   int x, y, w, h, floor_height;
   ArrayList<Animal> animals;
-  //Iterator<Animal> animalIterator;
+  Iterator<Animal> animalIterator;
   color WATER = #00FFFF;
   color SAND = color(246, 215, 176);;
   
@@ -25,9 +25,7 @@ class Tank {
       a.display();
     }
   }
-  
-  
-  
+
   void populate(int n){
     for (int i = 0; i<n; i++){
       int species = (int) random(5); 
@@ -43,7 +41,7 @@ class Tank {
         animals.add(new Octopus((int) random(x, w), (int) random(y + h - floor_height),this));
       }
       if(species == 3){
-        animals.add(new Starfish(randomx, randomy,this));
+        animals.add(new Finfish(randomx, randomy,this));
       }
       if(species == 4){
         animals.add(new Crab(randomx, randomy, this));
@@ -51,25 +49,25 @@ class Tank {
     }
   }
   
-  void addAnimal (int x, int y) {
-    //if(x < w && y > h) {
-      int species = (int) random(5);
+  void addAnimal (int species) {
+    if(mouseX > x + 5 && mouseX < x + w - 20 && mouseY > y + 5 && mouseY < y + h - floor_height) {
       if(species == 0){
-        animals.add(new Fish(x, y, this));
+        animals.add(new Fish(mouseX, mouseY, this));
       }
       if(species == 1){
-        animals.add(new Goldfish(x, y,this));
+        animals.add(new Goldfish(mouseY, mouseY,this));
       }
       if(species == 2){
-        animals.add(new Octopus((int) random(x,x+w), (int) random(y + h - floor_height),this));
+        animals.add(new Octopus(mouseX, mouseY,this));
       }
       if(species == 3){
-        animals.add(new Starfish(x, y,this));
+        animals.add(new Finfish(mouseX, mouseY,this));
       }
       if(species == 4){
-        animals.add(new Crab(x, y, this));
+        animals.add(new Crab(mouseX, mouseY, this));
       }
     }
+  }
 
   void moveAnimals(){
     for (Animal a: animals){
@@ -86,15 +84,15 @@ class Tank {
   //    }
   //    if(species == 3) {
   //      animals.add(new SineFish((int) random(x,x+w), (int) random(y + h),this));
-  //void clean(){
-  //  Iterator<Animal> animalIterator = animals.iterator();
-  //  while(animalIterator.hasNext()){
-  //    Animal a = animalIterator.next();
-  //    if(a.remove){
-  //      animalIterator.remove();
-  //    }
-  //  }
-  //}
+  void clean(){
+    Iterator<Animal> animalIterator = animals.iterator();
+    while(animalIterator.hasNext()){
+      Animal a = animalIterator.next();
+      if(a.remove){
+        animalIterator.remove();
+      }
+    }
+  }
   
   void interactions(){
     for (Animal a: animals){

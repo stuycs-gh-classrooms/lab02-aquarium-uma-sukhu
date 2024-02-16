@@ -8,7 +8,7 @@ class Animal {
   
   Tank myTank; //to know container attributes
   
-  int MAXVELOCITY = 10;
+  int MAXVELOCITY = 5;
   
   //Interaction Vars
   int foodChainID;
