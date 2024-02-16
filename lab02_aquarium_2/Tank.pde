@@ -74,16 +74,7 @@ class Tank {
       a.move();
     }
   }
-  //Animals.add(new Fish((int) random(x,x+w), (int) random(y + h), this));
-  //    }
-  //    if(species == 1){
-  //      animals.add(new Goldfish((int) random(x,x+w), (int) random(y + h),this));
-  //    }
-  //    if(species == 2){
-  //      animals.add(new Octopus((int) random(x,x+w), (int) random(y + h - floor_height),this));
-  //    }
-  //    if(species == 3) {
-  //      animals.add(new SineFish((int) random(x,x+w), (int) random(y + h),this));
+
   void clean(){
     Iterator<Animal> animalIterator = animals.iterator();
     while(animalIterator.hasNext()){
